@@ -50,9 +50,9 @@ A personal portfolio web application built with React and Vite. It showcases sel
 
 ### Screenshots:
 
-![WebSite View]()
-![Portfolio Page]()
-![contact Page]()
+![WebSite View](./src/assets/firstPage.png)
+![Portfolio Page](./src/assets/portfolioPage.png)
+![contact Page](./src/assets/contactpage.png)
 
 
 ## Credits
