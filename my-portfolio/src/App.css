@@ -1,42 +1,357 @@
+/* App wrapper to stretch full height */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 18px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  main {
+    flex: 1;
+    padding: 2rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  /* Background & Typography */
+  body {
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)), url('./assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #E0E1DD;
   }
-}
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background-color: #1B263B;
+    color: #E0E1DD;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .site-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
 
-.card {
-  padding: 2em;
-}
+  .site-title {
+    font-size: 2.2rem;
+  }
+  .about-heading {
+    font-size: 2rem;
+  }
+  .project-title {
+    font-size: 1.6rem;
+  }  
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: #E0E1DD;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: #415A77;
+  }
+  
+  .about-section,
+  .page-section,
+  .resume-section,
+  .content-box {
+    background-color: #0D1B2A;
+    color: #E0E1DD;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+  }
+  
+  /* About Section */
+  .about-section {
+    background-color: #1B263B;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    max-width: 1500px;
+    color: #E0E1DD;
+  }
+  
+  .about-heading-wrapper {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: flex-start; /* Avatar and text top-aligned */
+    gap: 2rem;
+    flex-wrap: nowrap;       /* Prevent wrapping on large screens */
+    justify-content: center;
+  }
+  
+  .about-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+  }
+  
+  .about-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+  
+ /* Form Styling */
+form {
+    max-width: 600px; /* Increased width */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* More spacing between fields */
+    font-size: 1.2rem; /* Increased base font size */
+  }
+  
+  input, textarea {
+    padding: 1rem; /* More padding for a larger field */
+    font-size: 1.2rem; /* Larger text */
+    border: none;
+    border-radius: 6px;
+    background-color: #778DA9;
+    color: #0D1B2A;
+  }
+  
+  button {
+    padding: 0.75rem 1.2rem;
+    font-size: 1.1rem;
+    background-color: #415A77;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #778DA9;
+  }
+  
+  button:disabled {
+    background-color: #888;
+  }
+  
+  .error {
+    color: #ffaaaa;
+    font-size: 1rem;
+  }  
+  
+  /* Project Cards */
+  .project-title {
+    font-size: 1.4rem; /* Slightly bigger title */
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    color: #E0E1DD;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; /* Slightly tighter spacing */
+    padding: 3rem 0; /* More breathing room vertically */
+    justify-items: center;
+  }
+  
+  .project-card {
+    width: 100%;
+    max-width: 600px; /* ⬅️ was 500px — now bigger */
+    background-color: #415A77;
+    border-radius: 16px;
+    padding: 2rem; /* More padding inside */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.read-the-docs {
-  color: #888;
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .project-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  }
+  
+ .project-image,
+ .project-video {
+  width: 100%;
+  height: 220px; /* ⬅️ was 180px — now taller image */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
+  
+  .project-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    font-size: 1.05rem;
+  }
+  
+  .project-links a {
+    color: #E0E1DD;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .project-links a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  /* Resume Download */
+  .resume-download {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #415A77;
+    color: #E0E1DD;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /* Resume Details */
+  .resume-summary {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .job {
+    margin-bottom: 1.5rem;
+  }
+  
+  .job h4 {
+    color: #778DA9;
+    margin-bottom: 0.5rem;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    background-color: #1B263B;
+    color: #E0E1DD;
+    font-size: 2rem;
+  }
+  
+  .footer a {
+    color: #778DA9;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: white;
+  }
+  
+  /* ---------- Responsive Design ---------- */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+  
+    .about-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .about-text {
+      text-align: left;
+      padding: 0 1rem;
+    }
+  
+    .project-grid {
+      grid-template-columns: 1fr !important;
+    }
+  
+    .footer {
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .site-title {
+      font-size: 1.5rem;
+    }
+  
+    .about-avatar {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .about-text p {
+      font-size: 0.95rem;
+    }
+  
+    .project-card {
+      padding: 1rem;
+    }
+  
+    .project-links {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  /* Reduce image height slightly on smaller screens */
+  @media (max-width: 600px) {
+    .project-image,
+    .project-video {
+      height: 180px;
+    }
+  }
+  
