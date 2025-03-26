@@ -39,9 +39,10 @@ function Resume() {
 
       {/* PDF Download */}
       <a
-        href="/assets/Luna-Houshmand-Resume.pdf"
-        download
-        className="resume-download"
+       href="https://limewire.com/d/qzjbq#zvAmQ1GVe5"
+       target="_blank"  // Opens the link in a new tab.
+       rel="noopener noreferrer" //Improves security and performance for external links.
+       className="resume-download"
       >
         📄 Download PDF Resume
       </a>
