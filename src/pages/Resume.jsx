@@ -39,7 +39,7 @@ function Resume() {
 
       {/* PDF Download */}
       <a
-       href="https://limewire.com/d/qzjbq#zvAmQ1GVe5"
+       href="https://docs.google.com/document/d/1HZm_N0xG01_ou6UtcBFrB1bdMj4yak7lphnp3BJfrGQ/export?format=pdf"
        target="_blank"  // Opens the link in a new tab.
        rel="noopener noreferrer" //Improves security and performance for external links.
        className="resume-download"
